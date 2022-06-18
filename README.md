@@ -6,7 +6,7 @@
   [PNG Tool](http://tool.xiaofanblog.net/) 是一个功能较为全面的图像压缩和转换工具的源代码，实现主要基于 [sharp](https://github.com/lovell/sharp) 图像处理库。支持：png、jpg、gif、webp、tiff 格式。该项目仅作为一个学习Demo。
   
   ⚡️PNG Tool Website：[tool.xiaofanblog.net](http://tool.xiaofanblog.net/)
-  ⚡️小樊博客：[xiaofanblog.net](http://tool.xiaofanblog.net/)
+  ⚡️小樊博客：[xiaofanblog.net](http://xiaofanblog.net/)
 
 - **项目特点**
   
