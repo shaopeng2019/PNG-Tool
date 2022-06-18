@@ -1,0 +1,172 @@
+{{extend '../shared/layout.html'}}
+{{block 'title'}}
+<title>PNG Tool 功能全面的图像压缩和转换工具</title>
+{{/block}}
+{{block 'keywords'}}
+<meta name="keywords" content="前端工具库 | 图片压缩 | 图片转换 | 格式转换 | 添加水印" />
+{{/block}}
+{{block 'description'}}
+<meta name="description" content="开源、功能全面、简单易用、支持自定义像素、质量压缩、中心裁剪、格式转换。并且为摄影师的朋友提供自定义一键添加水印的福利功能。图片最大支持20MB，数量不限！" />
+{{/block}}
+
+{{block 'styles'}}
+<link rel="stylesheet" href="/cn/styles/tool/compress.min.css">
+{{/block}}
+
+{{block 'body'}}
+
+<section class="main">
+  <div class="main-container container">
+    <div class="start-before">
+      <h2 class="title-text">
+        <span class="color">PNG Tool</span> 是功能全面的图像『压缩』和『转换』工具
+      </h2>
+      <h2 class="desc">支持 png、jpeg、webp、tiff、gif 格式</h2>
+      <div class="user-options">
+        <div class="option-group">
+          <h2 class="label">像素大小(px)</h2>
+          <input id="width" class="option-input" type="text" placeholder="宽度 默认">
+          <input id="height" class="option-input" type="text" placeholder="高度 默认">
+        </div>
+        <div class="option-group">
+          <h2 class="label">压缩质量(%)</h2>
+          <input id="quality" class="option-input" type="text" placeholder="默认 85">
+        </div>
+        <div class="option-group">
+          <h2 class="label">格式转换</h2>
+          <div class="select ext">
+            <div class="current">默认</div>
+            <div class="options">
+              <div class="option-item active">默认</div>
+              <div class="option-item">.jpg</div>
+              <div class="option-item">.png</div>
+              <div class="option-item">.webp</div>
+              <div class="option-item">.tiff</div>
+              <div class="option-item">.gif</div>
+            </div>
+          </div>
+        </div>
+        <div class="option-group">
+          <div class="check-box greyscale">
+            <div class="check-block"></div>
+            <h2 class="check-label">转黑白</h2>
+          </div>
+        </div>
+        <div class="option-group">
+          <div class="uplad-watermark">
+            <div class="upload-btn">
+              添加水印
+              <input id="watermark-file" class="watermark-input" type="file"
+                accept="image/gif,image/png,image/webp,image/jpeg,image/tiff">
+            </div>
+            <div class="clean-btn">
+              清除水印
+            </div>
+          </div>
+          <div class="watermask-position">
+            <div class="current">
+              <div class="item"></div>
+              <div class="item"></div>
+              <div class="item"></div>
+              <div class="item"></div>
+              <div class="item"></div>
+              <div class="item"></div>
+              <div class="item"></div>
+              <div class="item"></div>
+              <div class="item active"></div>
+            </div>
+            <div class="options">
+              <div class="item"></div>
+              <div class="item"></div>
+              <div class="item"></div>
+              <div class="item"></div>
+              <div class="item"></div>
+              <div class="item"></div>
+              <div class="item"></div>
+              <div class="item"></div>
+              <div class="item active"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="drag-container">
+        <div class="drag-icon"></div>
+        <h2 class="drag-tips">将需要处理的图片拖拽到这里</h2>
+        <h2 class="sub-tips">相关参数请提前设置</h2>
+        <input id="file" class="input-files" type="file" multiple
+          accept="image/gif,image/png,image/webp,image/jpeg,image/tiff">
+      </div>
+    </div>
+    <div class="queue">
+    </div>
+    <div class="download-all-box">
+      <a class="download-all-btn" href="javascript:void(0)">下载全部.zip<span class="total">0</span></a>
+    </div>
+
+    <!-- 为什么选择 PNG Tool -->
+    <div class="why-select">
+      <h2 class="why-select-title">为什么选择 PNG Tool?</h2>
+      <div class="why-group">
+        <div class="item">
+          <h2 class="item-title">隐私安全</h2>
+          <p class="item-desc">你不用担心上传到我们服务器的图片作品会被我们使用。我们创建了定时清除的程序任务，每过1个小时会自动清除1个小时以前的图片，可在GitHub上查看源码。</p>
+        </div>
+        <div class="item">
+          <h2 class="item-title">功能全面</h2>
+          <p class="item-desc">包含常用的功能且简单易用，是PNG Tool的绝对优势所在。支持自定义像素、质量压缩、中心裁剪、格式转换。并且为摄影师的朋友提供自定义一键添加水印的福利功能。<br>单张图片最大支持20MB，数量不限！</p>
+        </div>
+        <div class="item">
+          <h2 class="item-title">高性能</h2>
+          <p class="item-desc">服务端由Nodejs开发，基于事件循环机制，非阻塞I/O，很好的支撑高并发。图像处理方面引用Nodejs开源模块sharp，该模块由速度极快的 libvips 图像处理库提供支持。由于使用了libvips，调整图像大小通常比使用最快的 ImageMagick、GraphicsMagick 快4到5倍。并且不会因此牺牲图片质量。
+          </p>
+        </div>
+        <div class="item">
+          <h2 class="item-title">开源</h2>
+          <p class="item-desc">PNG Tool项目的源码已上传至GitHub，可共广大爱好者交流学习使用。 也希望能为大家提供帮助，提高工作效率。在此感谢所有开源库的作者及团队，让我们能站在巨人的肩膀上，一同见证程序的魅力。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 使用说明 -->
+    <div class="instructions">
+      <h2 class="why-select-title">使用说明</h2>
+      <div class="row-item">
+        <h2 class="item-title">像素大小(px)</h2>
+        <p class="desc">宽高都不填写则按照默认的像素大小输出</p>
+        <p class="desc">填写其中一项，另一项会自动按照原图的宽高比例进行设置</p>
+        <p class="desc">两项都填写，如果比例与原图的宽高比不一致，会自动选择中心裁剪，不会做单向挤压，因为挤压本身就不合理</p>
+      </div>
+      <div class="row-item">
+        <h2 class="item-title">压缩质量(%)</h2>
+        <p class="desc">除了默认的压缩优化之外，你可以根据自己的需要调整压缩质量。最大100%，最小为1%，但凡是要有个度~ 推荐默认配置85%</p>
+      </div>
+      <div class="row-item">
+        <h2 class="item-title">格式转换</h2>
+        <p class="desc">以上格式都可以实现相互转换，但如果要转换成gif，图片像素不能过大</p>
+      </div>
+      <div class="row-item">
+        <h2 class="item-title">颜色转换</h2>
+        <p class="desc">目前开放彩色图片去色功能，即是转为黑白图片，暂不支持影调控制，如果有更高的要求还是需要使用专业的图形处理软件</p>
+      </div>
+      <div class="row-item">
+        <h2 class="item-title">水印添加</h2>
+        <p class="desc">为了满足自定义水印的要求，你可以自己提前设计好具有透明度通道的水印图片<br>添加后，可以选择水印在图片上显示的位置，提供了九宫格作为选择</p>
+        <p class="desc">水印文件大小请限制在 1MB 以内</p>
+      </div>
+      <div class="row-item">
+        <h2 class="item-title">获取压缩后的图片</h2>
+        <p class="desc">单项下载，单个进度完成后，可在进度条后 点击下载</p>
+        <p class="desc">全部下载，整个进度完成后，可在队列末尾点击 下载全部</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{{/block}}
+
+{{block 'scripts'}}
+<script>
+  app.run('toolCompress');
+</script>
+{{/block}}

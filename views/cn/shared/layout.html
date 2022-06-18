@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="author" content="xiaofanblog.net" />
+  <meta name="viewport"
+    content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0 user-scalable=no" />
+  <meta name="author" content="xiaofanblog.net">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  {{block 'keywords'}}
+  <meta name="keywords" content="前端工具库" />
+  {{/block}}
+  {{block 'description'}}
+  <meta name="description" content="前端工具库" />
+  {{/block}}
+  {{block 'title'}}
+  <title></title>
+  {{/block}}
+  
+  <link rel="stylesheet" href="/cn/styles/styles.css">
+  <link rel="stylesheet" href="/cn/styles/public.min.css">
+  {{block 'styles'}}
+  {{/block}}
+</head>
+
+<body>
+  {{include './header.html'}}
+  {{block 'body'}}
+  {{/block}}
+  {{include './footer.html'}}
+  
+  <script src="/cn/js/jquery-3.4.1.min.js"></script>
+  <script src="/cn/js/app.min.js"></script>
+  <script src="/cn/js/main.js"></script>
+  {{block 'scripts'}}
+  {{/block}}
+</body>
+
+</html>
